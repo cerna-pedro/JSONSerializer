@@ -48,6 +48,12 @@ namespace JSONSerializer
             };
             var jsonString = JsonSerializer.Serialize(guys);
             Console.WriteLine(jsonString);
+
+            var copyOfGuys = JsonSerializer.Deserialize<List<Guy>>(jsonString);
+            foreach (var guy in guys)
+            {
+                Console.WriteLine("I deserialized this guy: {0}",guy);
+            }
         }
         
     }
